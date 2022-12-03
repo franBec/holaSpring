@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Inicio</title>
 </head>
 <body>
     <h1>Inicio</h1>
-    <p th:text="adios"></p>
+    <!--/*@thymesVar id="mensaje" type=""*/-->
+    <p th:text="${mensaje}"></p>
+    <!--/*@thymesVar id="saludo" type=""*/-->
+    <p th:text="${saludo}"></p>
 </body>
 </html>
