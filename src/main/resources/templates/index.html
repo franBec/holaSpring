@@ -5,10 +5,20 @@
     <title>Inicio</title>
 </head>
 <body>
-    <h1>Inicio</h1>
-    <!--/*@thymesVar id="mensaje" type=""*/-->
-    <p th:text="${mensaje}"></p>
-    <!--/*@thymesVar id="saludo" type=""*/-->
-    <p th:text="${saludo}"></p>
+<!--/*@thymesVar id="mensaje" type=""*/-->
+<!--/*@thymesVar id="saludo" type=""*/-->
+<!--/*@thymesVar id="persona" type="com.example.holaspring.domain.Persona"*/-->
+
+<h1>Inicio</h1>
+<p th:text="${mensaje}"></p>
+<p th:text="${saludo}"></p>
+<br>
+Nombre: <span th:text="${persona.nombre}"></span>
+<br>
+Apellido: <span th:text="${persona.apellido}"></span>
+<br>
+Email: <span th:text="${persona.email}"></span>
+<br>
+Telefono: <span th:text="${persona.telefono}"></span>
 </body>
 </html>
