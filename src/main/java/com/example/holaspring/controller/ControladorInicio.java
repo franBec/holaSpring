@@ -24,12 +24,19 @@ public class ControladorInicio {
 
     @GetMapping("/create")
     public String create(Persona persona){
-        return "edit";
+        return "createOrEdit";
     }
 
     @PostMapping("/save")
     public String save(Persona persona){
         personaService.save(persona);
         return "redirect:/";
+    }
+
+    @GetMapping("/edit/{idPersona}")
+    public String edit(Persona persona, Model model){
+        persona = personaService.findById(persona.getIdPersona());
+        model.addAttribute("persona", persona);
+        return "createOrEdit";
     }
 }
