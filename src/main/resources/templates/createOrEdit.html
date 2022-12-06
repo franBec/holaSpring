@@ -5,7 +5,8 @@
     <title>Datos de la persona</title>
 </head>
 <body>
-<h1>Datos de la persona</h1>
+<header th:replace="layout/layout :: header"></header>
+<h2>Datos de la persona</h2>
 <a th:href="@{/}">Regresar</a>
 <br>
 <form th:action="@{/save}" method="post" th:object="${persona}">
@@ -27,5 +28,6 @@
     <br>
     <input type="submit" name="Guardar" value="Guardar"/>
 </form>
+<footer th:replace="layout/layout :: footer"></footer>
 </body>
 </html>

@@ -5,7 +5,7 @@
     <title>Inicio</title>
 </head>
 <body>
-<h1>Inicio</h1>
+<header th:replace="layout/layout :: header"></header>
 <a th:href="@{/create}">Crear persona</a>
 <div th:if="${personaList != null and !personaList.empty}">
     <table border="1">
@@ -33,6 +33,7 @@
     La lista esta vacia
 </div>
 <br>
+<footer th:replace="layout/layout :: footer"></footer>
 
 </body>
 </html>
