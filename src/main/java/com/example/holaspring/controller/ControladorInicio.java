@@ -39,4 +39,10 @@ public class ControladorInicio {
         model.addAttribute("persona", persona);
         return "createOrEdit";
     }
+
+    @GetMapping("/delete/{idPersona}")
+    public String delete(Persona persona){
+        personaService.delete(persona);
+        return "redirect:/";
+    }
 }
