@@ -5,14 +5,7 @@
     <title>Inicio</title>
 </head>
 <body>
-<!--/*@thymesVar id="mensaje" type="java.lang.String"*/-->
-<!--/*@thymesVar id="saludo" type="java.lang.String"*/-->
-<!--/*@thymesVar id="personaList" type="java.util.ArrayList"*/-->
-
 <h1>Inicio</h1>
-<p th:text="${mensaje}"></p>
-<p th:text="${saludo}"></p>
-<br>
 <div th:if="${personaList != null and !personaList.empty}">
     <table border="1">
         <tr>
