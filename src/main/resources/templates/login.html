@@ -4,15 +4,42 @@
     <title>Login</title>
 </head>
 <body>
-    <h1>Login</h1>
-    <form th:action="@{/login}" method="post">
-        <label for="username">Username: </label>
-        <input type="text" name="username">
-        <br>
-        <label for="password">Password: </label>
-        <input type="password" name="password">
+    <header th:replace="layout/layout :: header"></header>
 
-        <input type="submit" value="Login">
-    </form>
+    <section id="actions" class="py-4 mb-4 bg-light">
+        <div class="container">
+            <div class="row">
+            </div>
+        </div>
+    </section>
+
+    <section id="login">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Login</h4>
+                        </div>
+                        <div class="card-body">
+                            <form th:action="@{/login}" method="post">
+                                <div class="form-group">
+                                    <label for="username">Username: </label>
+                                    <input type="text" name="username">
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password: </label>
+                                    <input type="password" name="password">
+                                </div>
+                                <input type="submit" value="Login" class="btn btn-primary btn-block">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer th:replace="layout/layout :: footer"></footer>
 </body>
 </html>
