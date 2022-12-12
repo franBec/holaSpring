@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 @Slf4j
@@ -24,7 +25,16 @@ public class ControladorInicio {
     @GetMapping("/")
     public String inicio(Model model, @AuthenticationPrincipal User user){
         log.info("Usuario logueado: "+user);
-        model.addAttribute("personaList", personaService.findAll());
+
+        List<Persona> personaList = personaService.findAll();
+        double saldoTotal = 0;
+        for(Persona persona : personaList){
+            saldoTotal += persona.getSaldo();
+        }
+
+        model.addAttribute("personaList", personaList);
+        model.addAttribute("saldoTotal", saldoTotal);
+        model.addAttribute("totalClientes", personaList.size());
         return "index";
     }
 
