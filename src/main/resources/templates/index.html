@@ -8,40 +8,10 @@
     <title>Inicio</title>
 </head>
 <body>
-<header th:replace="layout/layout :: header"></header>
-<a
-        sec:authorize="hasRole('ROLE_ADMIN')"
-        th:href="@{/create}"
->
-    [[#{persona.crear}]]
-</a>
-<div th:if="${personaList != null and !personaList.empty}">
-    <table border="1">
-        <tr>
-            <th>[[#{persona.nombre}]]</th>
-            <th>[[#{persona.apellido}]]</th>
-            <th>[[#{persona.email}]]</th>
-            <th>[[#{persona.telefono}]]</th>
-            <th sec:authorize="hasRole('ROLE_ADMIN')">[[#{accion.editar}]]</th>
-            <th sec:authorize="hasRole('ROLE_ADMIN')">[[#{accion.eliminar}]]</th>
-        </tr>
-
-        <tr th:each="it : ${personaList}">
-            <td th:text="${it.nombre}"></td>
-            <td th:text="${it.apellido}"></td>
-            <td th:text="${it.email}"></td>
-            <td th:text="${it.telefono}"></td>
-            <td sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/edit/}+${it.idPersona}">[[#{accion.editar}]]</a></td>
-            <td sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/delete/}+${it.idPersona}">[[#{accion.eliminar}]]</a></td>
-        </tr>
-
-    </table>
-</div>
-<div th:if="${personaList == null or personaList.empty}">
-    [[#{persona.lista-vacia}]]
-</div>
-<br>
-<footer th:replace="layout/layout :: footer"></footer>
-
+    <header th:replace="layout/layout :: header"></header>
+    <section th:replace="layout/botonesAgregar :: botonesAgregar"></section>
+    <!--<section th:replace="layout/agregarCliente :: agregarCliente"></section>-->
+    <section th:replace="layout/listadoClientes :: listadoClientes"></section>
+    <footer th:replace="layout/layout :: footer"></footer>
 </body>
 </html>
